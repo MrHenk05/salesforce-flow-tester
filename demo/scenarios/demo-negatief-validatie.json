@@ -1,0 +1,16 @@
+{
+  "name": "Demo - ongeldig KvK-nummer geeft validatiefout",
+  "seed": 20261007,
+  "startUrl": "http://localhost:4173/flow.html",
+  "allowedOrgUrls": ["http://localhost:4173"],
+  "screens": [
+    {
+      "match": { "step": 1 },
+      "fields": [
+        { "label": "Klanttype", "value": "Zakelijk" },
+        { "label": "KvK-nummer", "value": "1234" }
+      ]
+    }
+  ],
+  "expectedOutcome": { "type": "validationError", "errors": ["KvK-nummer moet uit 8 cijfers bestaan."] }
+}

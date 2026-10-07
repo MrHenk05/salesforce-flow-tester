@@ -1,0 +1,35 @@
+{
+  "name": "VOORBEELD positief - vervang alle waarden met VERVANG",
+  "seed": 12345,
+  "startUrl": "/flow/VERVANG_FLOW_API_NAAM",
+  "urlParameters": { "recordId": "VERVANG_RECORD_ID" },
+  "allowedOrgUrls": ["https://VERVANG-MYDOMAIN.sandbox.my.salesforce.com"],
+  "flowContainer": { "selector": "flowruntime-flow" },
+  "documentsDirectory": "C:\\SalesforceFlowTester\\testdocuments",
+  "autoFill": "all",
+  "allowFinish": false,
+  "maxSteps": 15,
+  "timeouts": { "actionMs": 10000, "navigationMs": 30000, "uploadMs": 60000, "loginMs": 600000, "settleMs": 5000 },
+  "locale": { "dateFormat": "d-M-yyyy", "timeFormat": "HH:mm" },
+  "navigation": { "next": ["Next", "Volgende"], "previous": ["Previous", "Vorige"], "finish": ["Finish", "Voltooien"] },
+  "screens": [
+    {
+      "match": { "step": 1 },
+      "fields": [
+        { "label": "VERVANG: veldlabel zoals inspect het toont", "value": "VERVANG: waarde" },
+        { "label": "VERVANG: label dat twee keer voorkomt", "occurrence": 2, "value": "VERVANG: waarde" },
+        { "label": "VERVANG: picklistlabel", "value": "VERVANG: optielabel" },
+        { "label": "VERVANG: lookuplabel", "lookup": { "search": "VERVANG: zoekterm", "select": "VERVANG: exacte naam van het resultaat" } }
+      ],
+      "expect": { "texts": ["VERVANG: tekst die op dit scherm moet staan"] }
+    },
+    {
+      "match": { "text": "VERVANG: kop of tekst van het uploadscherm" },
+      "uploads": [
+        { "label": "VERVANG: label van het uploadcomponent", "count": 1, "extensions": [".pdf"], "expect": "success" }
+      ]
+    }
+  ],
+  "expectedOutcome": { "type": "screen", "texts": ["VERVANG: tekst op het laatste scherm vóór Finish"] },
+  "reporting": { "directory": "reports", "maskValues": true }
+}

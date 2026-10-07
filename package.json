@@ -1,0 +1,27 @@
+{
+  "name": "salesforce-flow-tester",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Lokale tester voor Salesforce Screen Flows via Microsoft Edge en Playwright",
+  "type": "module",
+  "engines": {
+    "node": ">=20.11"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "inspect": "npm run build --silent && node dist/src/cli.js inspect",
+    "run-flow": "npm run build --silent && node dist/src/cli.js run",
+    "demo": "npm run build --silent && node dist/demo/server.js",
+    "test": "npm run build --silent && playwright test",
+    "login": "npm run build --silent && node dist/src/cli.js login"
+  },
+  "dependencies": {
+    "playwright": "1.63.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.63.0",
+    "@types/node": "^26.6.4",
+    "typescript": "^7.0.2"
+  }
+}

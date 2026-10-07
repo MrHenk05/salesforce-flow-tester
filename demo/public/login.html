@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>Inloggen | Demo-org</title>
+  <link rel="stylesheet" href="/demo.css">
+</head>
+<body class="login">
+  <form id="login_form" method="post">
+    <h1>Inloggen bij de demo-org</h1>
+    <p>Lokale demo: iedere gebruikersnaam werkt. Het wachtwoord wordt niet gecontroleerd of opgeslagen.</p>
+    <label for="username">Gebruikersnaam</label>
+    <input id="username" name="username" autocomplete="off">
+    <label for="password">Wachtwoord</label>
+    <input id="password" name="password" type="password" autocomplete="off">
+    <button type="submit" id="Login">Inloggen</button>
+  </form>
+  <script>
+    const params = new URLSearchParams(location.search);
+    document.getElementById('login_form').action = `/login?startURL=${encodeURIComponent(params.get('startURL') ?? '/flow.html')}`;
+  </script>
+</body>
+</html>

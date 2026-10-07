@@ -1,0 +1,19 @@
+{
+  "name": "Demo - verkeerd bestandstype wordt geweigerd",
+  "seed": 20261007,
+  "startUrl": "http://localhost:4173/flow.html",
+  "urlParameters": { "step": "3" },
+  "allowedOrgUrls": ["http://localhost:4173"],
+  "documentsDirectory": "../documents",
+  "screens": [
+    {
+      "match": { "text": "Documenten" },
+      "uploads": [
+        { "label": "Identiteitsbewijs", "files": ["notities.md"], "expect": "error", "expectedError": "bestandstype niet toegestaan" },
+        { "label": "Bijlagen", "skip": true },
+        { "label": "Aanvullend document", "skip": true }
+      ],
+      "action": "stop"
+    }
+  ]
+}

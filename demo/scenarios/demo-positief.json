@@ -1,0 +1,40 @@
+{
+  "name": "Demo - aanvraag zakelijk, volledig doorlopen",
+  "seed": 20261007,
+  "startUrl": "http://localhost:4173/flow.html",
+  "allowedOrgUrls": ["http://localhost:4173"],
+  "documentsDirectory": "../documents",
+  "allowFinish": true,
+  "screens": [
+    {
+      "match": { "text": "Aanvrager" },
+      "fields": [
+        { "label": "Klanttype", "value": "Zakelijk" },
+        { "label": "Achternaam", "value": "Jansen" },
+        { "label": "Telefoon", "occurrence": 2, "value": "0201234567" }
+      ],
+      "expect": { "texts": ["Aanvrager"] }
+    },
+    {
+      "match": { "text": "Aanvraag" },
+      "fields": [
+        { "label": "Land", "value": "Nederland" },
+        { "label": "Interesses", "value": ["Advies", "Training"] },
+        { "label": "Account", "lookup": { "search": "Acme", "select": "Acme BV" } }
+      ]
+    },
+    {
+      "match": { "text": "Documenten" },
+      "uploads": [
+        { "label": "Identiteitsbewijs", "extensions": [".png", ".jpg"], "expect": "success" },
+        { "label": "Bijlagen", "count": 2, "expect": "success" }
+      ]
+    },
+    {
+      "match": { "text": "Controle" },
+      "expect": { "texts": ["Controleer uw aanvraag"] },
+      "action": "finish"
+    }
+  ],
+  "expectedOutcome": { "type": "finished", "texts": ["Bedankt! Uw aanvraag is ontvangen"] }
+}

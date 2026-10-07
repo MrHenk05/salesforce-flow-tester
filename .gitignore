@@ -1,0 +1,16 @@
+node_modules/
+dist/
+
+# Browserprofiel en sessiegegevens van de tester
+.edge-profile/
+*.edge-profile/
+
+# Rapporten, screenshots en traces
+reports/
+test-results/
+playwright-report/
+
+# Eigen scenario's met orggegevens en lokale testdocumenten
+scenarios/*.local.json
+/testdocuments/
+/documents/

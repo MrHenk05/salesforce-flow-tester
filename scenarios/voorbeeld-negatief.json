@@ -1,0 +1,17 @@
+{
+  "name": "VOORBEELD negatief - verwachte validatiefout",
+  "seed": 12345,
+  "startUrl": "/flow/VERVANG_FLOW_API_NAAM",
+  "allowedOrgUrls": ["https://VERVANG-MYDOMAIN.sandbox.my.salesforce.com"],
+  "documentsDirectory": "C:\\SalesforceFlowTester\\testdocuments",
+  "allowFinish": false,
+  "screens": [
+    {
+      "match": { "step": 1 },
+      "fields": [
+        { "label": "VERVANG: veld met validatieregel", "value": "VERVANG: ongeldige waarde", "overwrite": true }
+      ]
+    }
+  ],
+  "expectedOutcome": { "type": "validationError", "errors": ["VERVANG: verwachte foutmelding"] }
+}

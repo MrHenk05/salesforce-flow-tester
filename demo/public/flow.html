@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="nl">
+<head>
+  <meta charset="utf-8">
+  <title>Aanvraag | Demo-org</title>
+  <link rel="stylesheet" href="/demo.css">
+</head>
+<body>
+  <header class="global-header">
+    <strong>Demo-org</strong>
+    <input type="search" aria-label="Zoeken in Salesforce" placeholder="Zoeken...">
+    <a href="/logout">Uitloggen</a>
+  </header>
+  <main class="page">
+    <aside class="record-panel">
+      <h2>Notities bij record</h2>
+      <label for="record-notes">Notities</label>
+      <textarea id="record-notes"></textarea>
+    </aside>
+    <flowruntime-flow>
+      <div class="flow-body"></div>
+    </flowruntime-flow>
+  </main>
+  <script src="/flow.js"></script>
+</body>
+</html>
